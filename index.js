@@ -5,8 +5,7 @@ app.use(express.json());
 
 app.post("/patch", async function (request, response) {
     const url = request.query.link;
-    const headers = request.headers
-    console.log(headers)
+    const headers = request.headers;
     try {
         const axiosResponse = await axios.patch(url, request.body, {
             headers: {
@@ -22,6 +21,8 @@ app.post("/patch", async function (request, response) {
         response.status(500).json({ error: "Internal Server Error", message: error.message });
     }
 });
+
+app.get("/patch", (req,res) => res.send("hola mundo bebe"))
 
 
 app.all("/", (req, res) => res.send("hola mundo"))
