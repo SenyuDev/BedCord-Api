@@ -22,9 +22,6 @@ app.post("/patch", async function (request, response) {
     }
 });
 
-app.get("/patch", (req,res) => res.send("hola mundo bebe"))
-
-
 app.all("/", (req, res) => res.send("hola mundo"))
 
 
